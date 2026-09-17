@@ -1,5 +1,5 @@
 
-D:\pihu option\YouTube_Transcript_Pro\YouTube_Transcript_Pro>type main.py
+
 from flask import Flask, render_template, request, jsonify, send_file
 from youtube_transcript_api import YouTubeTranscriptApi
 try:
@@ -1649,4 +1649,14 @@ if __name__ == "__main__":
         use_reloader=False
 
     )
-D:\pihu option\YouTube_Transcript_Pro\YouTube_Transcript_Pro>
+    app.run(
+
+        host="0.0.0.0",
+
+        port=port,
+
+        debug=False,
+
+        use_reloader=False
+
+    )
