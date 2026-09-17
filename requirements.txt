@@ -1,5 +1,5 @@
 Flask
+youtube-transcript-api>=1.2.3
+reportlab
 gunicorn
 requests
-reportlab
-youtube-transcript-api>=1.2.4
