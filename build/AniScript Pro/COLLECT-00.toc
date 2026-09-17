@@ -1,0 +1,275 @@
+([('AniScript Pro.exe',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\build\\AniScript '
+   'Pro\\AniScript Pro.exe',
+   'EXECUTABLE'),
+  ('PIL\\_avif.cp311-win_amd64.pyd',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\PIL\\_avif.cp311-win_amd64.pyd',
+   'EXTENSION'),
+  ('PIL\\_imaging.cp311-win_amd64.pyd',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\PIL\\_imaging.cp311-win_amd64.pyd',
+   'EXTENSION'),
+  ('PIL\\_imagingcms.cp311-win_amd64.pyd',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\PIL\\_imagingcms.cp311-win_amd64.pyd',
+   'EXTENSION'),
+  ('PIL\\_imagingmath.cp311-win_amd64.pyd',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\PIL\\_imagingmath.cp311-win_amd64.pyd',
+   'EXTENSION'),
+  ('PIL\\_imagingtk.cp311-win_amd64.pyd',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\PIL\\_imagingtk.cp311-win_amd64.pyd',
+   'EXTENSION'),
+  ('PIL\\_webp.cp311-win_amd64.pyd',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\PIL\\_webp.cp311-win_amd64.pyd',
+   'EXTENSION'),
+  ('VCRUNTIME140.dll',
+   'C:\\Program Files\\Python311\\VCRUNTIME140.dll',
+   'BINARY'),
+  ('_asyncio.pyd',
+   'C:\\Program Files\\Python311\\DLLs\\_asyncio.pyd',
+   'EXTENSION'),
+  ('_bz2.pyd', 'C:\\Program Files\\Python311\\DLLs\\_bz2.pyd', 'EXTENSION'),
+  ('_ctypes.pyd',
+   'C:\\Program Files\\Python311\\DLLs\\_ctypes.pyd',
+   'EXTENSION'),
+  ('_decimal.pyd',
+   'C:\\Program Files\\Python311\\DLLs\\_decimal.pyd',
+   'EXTENSION'),
+  ('_elementtree.pyd',
+   'C:\\Program Files\\Python311\\DLLs\\_elementtree.pyd',
+   'EXTENSION'),
+  ('_hashlib.pyd',
+   'C:\\Program Files\\Python311\\DLLs\\_hashlib.pyd',
+   'EXTENSION'),
+  ('_lzma.pyd', 'C:\\Program Files\\Python311\\DLLs\\_lzma.pyd', 'EXTENSION'),
+  ('_multiprocessing.pyd',
+   'C:\\Program Files\\Python311\\DLLs\\_multiprocessing.pyd',
+   'EXTENSION'),
+  ('_overlapped.pyd',
+   'C:\\Program Files\\Python311\\DLLs\\_overlapped.pyd',
+   'EXTENSION'),
+  ('_queue.pyd', 'C:\\Program Files\\Python311\\DLLs\\_queue.pyd', 'EXTENSION'),
+  ('_socket.pyd',
+   'C:\\Program Files\\Python311\\DLLs\\_socket.pyd',
+   'EXTENSION'),
+  ('_ssl.pyd', 'C:\\Program Files\\Python311\\DLLs\\_ssl.pyd', 'EXTENSION'),
+  ('_uuid.pyd', 'C:\\Program Files\\Python311\\DLLs\\_uuid.pyd', 'EXTENSION'),
+  ('base_library.zip',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\build\\AniScript '
+   'Pro\\base_library.zip',
+   'DATA'),
+  ('certifi\\cacert.pem',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\certifi\\cacert.pem',
+   'DATA'),
+  ('certifi\\py.typed',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\certifi\\py.typed',
+   'DATA'),
+  ('charset_normalizer\\cd.cp311-win_amd64.pyd',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\charset_normalizer\\cd.cp311-win_amd64.pyd',
+   'EXTENSION'),
+  ('charset_normalizer\\md.cp311-win_amd64.pyd',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\charset_normalizer\\md.cp311-win_amd64.pyd',
+   'EXTENSION'),
+  ('click-8.5.0.dist-info\\INSTALLER',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\click-8.5.0.dist-info\\INSTALLER',
+   'DATA'),
+  ('click-8.5.0.dist-info\\METADATA',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\click-8.5.0.dist-info\\METADATA',
+   'DATA'),
+  ('click-8.5.0.dist-info\\RECORD',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\click-8.5.0.dist-info\\RECORD',
+   'DATA'),
+  ('click-8.5.0.dist-info\\WHEEL',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\click-8.5.0.dist-info\\WHEEL',
+   'DATA'),
+  ('click-8.5.0.dist-info\\licenses\\LICENSE.txt',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\click-8.5.0.dist-info\\licenses\\LICENSE.txt',
+   'DATA'),
+  ('flask-3.1.3.dist-info\\INSTALLER',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\flask-3.1.3.dist-info\\INSTALLER',
+   'DATA'),
+  ('flask-3.1.3.dist-info\\METADATA',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\flask-3.1.3.dist-info\\METADATA',
+   'DATA'),
+  ('flask-3.1.3.dist-info\\RECORD',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\flask-3.1.3.dist-info\\RECORD',
+   'DATA'),
+  ('flask-3.1.3.dist-info\\REQUESTED',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\flask-3.1.3.dist-info\\REQUESTED',
+   'DATA'),
+  ('flask-3.1.3.dist-info\\WHEEL',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\flask-3.1.3.dist-info\\WHEEL',
+   'DATA'),
+  ('flask-3.1.3.dist-info\\entry_points.txt',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\flask-3.1.3.dist-info\\entry_points.txt',
+   'DATA'),
+  ('flask-3.1.3.dist-info\\licenses\\LICENSE.txt',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\flask-3.1.3.dist-info\\licenses\\LICENSE.txt',
+   'DATA'),
+  ('fonts\\NotoSans-Italic-VariableFont_wdth,wght.ttf',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\fonts\\NotoSans-Italic-VariableFont_wdth,wght.ttf',
+   'DATA'),
+  ('fonts\\NotoSans-VariableFont_wdth,wght.ttf',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\fonts\\NotoSans-VariableFont_wdth,wght.ttf',
+   'DATA'),
+  ('fonts\\NotoSansBengali-VariableFont_wdth,wght.ttf',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\fonts\\NotoSansBengali-VariableFont_wdth,wght.ttf',
+   'DATA'),
+  ('fonts\\NotoSansDevanagari-Regular.ttf',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\fonts\\NotoSansDevanagari-Regular.ttf',
+   'DATA'),
+  ('fonts\\NotoSansDevanagari-VariableFont_wdth,wght.ttf',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\fonts\\NotoSansDevanagari-VariableFont_wdth,wght.ttf',
+   'DATA'),
+  ('fonts\\NotoSansDisplay-Italic-VariableFont_wdth,wght.ttf',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\fonts\\NotoSansDisplay-Italic-VariableFont_wdth,wght.ttf',
+   'DATA'),
+  ('fonts\\NotoSansDisplay-VariableFont_wdth,wght.ttf',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\fonts\\NotoSansDisplay-VariableFont_wdth,wght.ttf',
+   'DATA'),
+  ('fonts\\NotoSansGurmukhi-VariableFont_wdth,wght.ttf',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\fonts\\NotoSansGurmukhi-VariableFont_wdth,wght.ttf',
+   'DATA'),
+  ('fonts\\NotoSansJP-VariableFont_wght.ttf',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\fonts\\NotoSansJP-VariableFont_wght.ttf',
+   'DATA'),
+  ('fonts\\NotoSansSundanese-VariableFont_wght.ttf',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\fonts\\NotoSansSundanese-VariableFont_wght.ttf',
+   'DATA'),
+  ('fonts\\NotoSansTC-VariableFont_wght.ttf',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\fonts\\NotoSansTC-VariableFont_wght.ttf',
+   'DATA'),
+  ('fonts\\NotoSansTamil-VariableFont_wdth,wght.ttf',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\fonts\\NotoSansTamil-VariableFont_wdth,wght.ttf',
+   'DATA'),
+  ('fonts\\NotoSansTelugu-VariableFont_wdth,wght.ttf',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\fonts\\NotoSansTelugu-VariableFont_wdth,wght.ttf',
+   'DATA'),
+  ('itsdangerous-2.2.0.dist-info\\INSTALLER',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\itsdangerous-2.2.0.dist-info\\INSTALLER',
+   'DATA'),
+  ('itsdangerous-2.2.0.dist-info\\LICENSE.txt',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\itsdangerous-2.2.0.dist-info\\LICENSE.txt',
+   'DATA'),
+  ('itsdangerous-2.2.0.dist-info\\METADATA',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\itsdangerous-2.2.0.dist-info\\METADATA',
+   'DATA'),
+  ('itsdangerous-2.2.0.dist-info\\RECORD',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\itsdangerous-2.2.0.dist-info\\RECORD',
+   'DATA'),
+  ('itsdangerous-2.2.0.dist-info\\WHEEL',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\itsdangerous-2.2.0.dist-info\\WHEEL',
+   'DATA'),
+  ('libcrypto-1_1.dll',
+   'C:\\Program Files\\Python311\\DLLs\\libcrypto-1_1.dll',
+   'BINARY'),
+  ('libffi-8.dll',
+   'C:\\Program Files\\Python311\\DLLs\\libffi-8.dll',
+   'BINARY'),
+  ('libssl-1_1.dll',
+   'C:\\Program Files\\Python311\\DLLs\\libssl-1_1.dll',
+   'BINARY'),
+  ('markupsafe-3.0.3.dist-info\\INSTALLER',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\markupsafe-3.0.3.dist-info\\INSTALLER',
+   'DATA'),
+  ('markupsafe-3.0.3.dist-info\\METADATA',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\markupsafe-3.0.3.dist-info\\METADATA',
+   'DATA'),
+  ('markupsafe-3.0.3.dist-info\\RECORD',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\markupsafe-3.0.3.dist-info\\RECORD',
+   'DATA'),
+  ('markupsafe-3.0.3.dist-info\\WHEEL',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\markupsafe-3.0.3.dist-info\\WHEEL',
+   'DATA'),
+  ('markupsafe-3.0.3.dist-info\\licenses\\LICENSE.txt',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\markupsafe-3.0.3.dist-info\\licenses\\LICENSE.txt',
+   'DATA'),
+  ('markupsafe-3.0.3.dist-info\\top_level.txt',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\markupsafe-3.0.3.dist-info\\top_level.txt',
+   'DATA'),
+  ('markupsafe\\_speedups.cp311-win_amd64.pyd',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\markupsafe\\_speedups.cp311-win_amd64.pyd',
+   'EXTENSION'),
+  ('pyexpat.pyd',
+   'C:\\Program Files\\Python311\\DLLs\\pyexpat.pyd',
+   'EXTENSION'),
+  ('python311.dll', 'C:\\Program Files\\Python311\\python311.dll', 'BINARY'),
+  ('select.pyd', 'C:\\Program Files\\Python311\\DLLs\\select.pyd', 'EXTENSION'),
+  ('static\\images\\pihu.png',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\static\\images\\pihu.png',
+   'DATA'),
+  ('templates\\index.html',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\templates\\index.html',
+   'DATA'),
+  ('unicodedata.pyd',
+   'C:\\Program Files\\Python311\\DLLs\\unicodedata.pyd',
+   'EXTENSION'),
+  ('werkzeug-3.1.8.dist-info\\INSTALLER',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\werkzeug-3.1.8.dist-info\\INSTALLER',
+   'DATA'),
+  ('werkzeug-3.1.8.dist-info\\METADATA',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\werkzeug-3.1.8.dist-info\\METADATA',
+   'DATA'),
+  ('werkzeug-3.1.8.dist-info\\RECORD',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\werkzeug-3.1.8.dist-info\\RECORD',
+   'DATA'),
+  ('werkzeug-3.1.8.dist-info\\WHEEL',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\werkzeug-3.1.8.dist-info\\WHEEL',
+   'DATA'),
+  ('werkzeug-3.1.8.dist-info\\licenses\\LICENSE.txt',
+   'D:\\pihu '
+   'option\\YouTube_Transcript_Pro\\YouTube_Transcript_Pro\\venv\\Lib\\site-packages\\werkzeug-3.1.8.dist-info\\licenses\\LICENSE.txt',
+   'DATA')],)

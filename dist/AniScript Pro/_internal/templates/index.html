@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AniScript Pro</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Inter", sans-serif;
+            color: #ffffff;
+
+            background:
+                linear-gradient(
+                    rgba(5, 6, 14, 0.78),
+                    rgba(5, 6, 14, 0.94)
+                ),
+                url("/static/images/anime-bg.png");
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+            padding: 35px 15px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+
+            padding: 38px 35px;
+
+            border-radius: 28px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255, 85, 105, 0.88),
+                    rgba(167, 76, 255, 0.78)
+                );
+
+            border: 1px solid rgba(255,255,255,0.35);
+
+            box-shadow:
+                0 25px 70px rgba(255, 65, 120, 0.25),
+                inset 0 1px 0 rgba(255,255,255,0.35);
+
+            text-align: center;
+
+            margin-bottom: 25px;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+
+            width: 350px;
+            height: 350px;
+
+            background: rgba(255,255,255,0.12);
+
+            border-radius: 50%;
+
+            top: -200px;
+            right: -100px;
+
+            filter: blur(10px);
+        }
+
+        .hero-badge {
+            display: inline-block;
+
+            padding: 9px 18px;
+
+            border-radius: 30px;
+
+            background: rgba(255,255,255,0.16);
+
+            border: 1px solid rgba(255,255,255,0.45);
+
+            font-size: 13px;
+            font-weight: 700;
+
+            margin-bottom: 15px;
+
+            backdrop-filter: blur(10px);
+        }
+
+        .hero h1 {
+            font-family: "Orbitron", sans-serif;
+
+            font-size: clamp(38px, 6vw, 65px);
+
+            letter-spacing: 1px;
+
+            margin-bottom: 12px;
+
+            text-shadow:
+                0 4px 20px rgba(0,0,0,0.25);
+        }
+
+        .hero h1 span {
+            color: #ffe8f0;
+        }
+
+        .hero p {
+            font-size: 15px;
+
+            font-weight: 600;
+
+            color: rgba(255,255,255,0.9);
+        }
+
+        .card {
+            background: rgba(10, 11, 20, 0.82);
+
+            border: 1px solid rgba(255,255,255,0.10);
+
+            border-radius: 24px;
+
+            padding: 25px;
+
+            margin-bottom: 20px;
+
+            backdrop-filter: blur(18px);
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,0.35);
+
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: rgba(255,100,150,0.28);
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            font-size: 20px;
+            font-weight: 800;
+
+            margin-bottom: 16px;
+        }
+
+        .section-title .icon {
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 12px;
+
+            background: linear-gradient(
+                135deg,
+                #ff607d,
+                #9b55ff
+            );
+
+            box-shadow:
+                0 8px 25px rgba(255,70,130,0.25);
+        }
+
+        label {
+            display: block;
+
+            font-size: 13px;
+
+            color: #aeb3c7;
+
+            margin-bottom: 8px;
+
+            font-weight: 600;
+        }
+
+        input,
+        select,
+        textarea {
+
+            width: 100%;
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            background: rgba(255,255,255,0.07);
+
+            color: white;
+
+            border-radius: 13px;
+
+            padding: 14px 15px;
+
+            outline: none;
+
+            font-family: inherit;
+
+            transition: 0.25s ease;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+
+            border-color: #ff6687;
+
+            box-shadow:
+                0 0 0 3px rgba(255,80,130,0.10);
+        }
+
+        select option {
+            background: #171824;
+            color: white;
+        }
+
+        button {
+
+            border: none;
+
+            border-radius: 13px;
+
+            padding: 14px 20px;
+
+            color: white;
+
+            font-weight: 800;
+
+            font-family: inherit;
+
+            cursor: pointer;
+
+            transition: 0.25s ease;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff637e,
+                    #b14cff
+                );
+
+            box-shadow:
+                0 10px 25px rgba(190,70,170,0.25);
+        }
+
+        button:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 14px 30px rgba(190,70,170,0.38);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button:disabled {
+
+            opacity: 0.5;
+
+            cursor: not-allowed;
+
+            transform: none;
+        }
+
+        .full-btn {
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .secondary-btn {
+
+            background:
+                rgba(255,255,255,0.08);
+
+            border:
+                1px solid rgba(255,255,255,0.12);
+
+            box-shadow: none;
+        }
+
+        .grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+        @media(max-width: 750px) {
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            body {
+                padding: 18px 10px;
+            }
+
+            .hero {
+                padding: 30px 20px;
+            }
+
+            .card {
+                padding: 18px;
+            }
+        }
+
+        .status {
+
+            display: none;
+
+            margin-top: 15px;
+
+            padding: 13px 15px;
+
+            border-radius: 12px;
+
+            background: rgba(255,255,255,0.06);
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            color: #c9cde0;
+
+            font-size: 13px;
+        }
+
+        .status.show {
+            display: block;
+        }
+
+        textarea {
+
+            min-height: 330px;
+
+            resize: vertical;
+
+            line-height: 1.7;
+
+            font-size: 14px;
+        }
+
+        .language-info {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            margin-bottom: 10px;
+        }
+
+        .badge {
+
+            padding: 5px 10px;
+
+            border-radius: 20px;
+
+            background: rgba(255,95,130,0.12);
+
+            color: #ff91a8;
+
+            font-size: 11px;
+
+            font-weight: 700;
+        }
+
+        .export-card {
+
+            text-align: center;
+
+            padding: 30px;
+        }
+
+        .export-icon {
+
+            font-size: 42px;
+
+            margin-bottom: 10px;
+        }
+
+        .export-card h2 {
+
+            font-size: 23px;
+
+            margin-bottom: 7px;
+        }
+
+        .export-card p {
+
+            color: #9da2b7;
+
+            font-size: 13px;
+
+            margin-bottom: 18px;
+        }
+
+        footer {
+
+            text-align: center;
+
+            color: #777d93;
+
+            font-size: 12px;
+
+            padding: 20px;
+        }
+
+        footer strong {
+            color: #ff7995;
+        }
+
+        .loader {
+
+            display: inline-block;
+
+            width: 15px;
+            height: 15px;
+
+            border: 2px solid rgba(255,255,255,0.35);
+
+            border-top-color: white;
+
+            border-radius: 50%;
+
+            animation: spin 0.7s linear infinite;
+
+            vertical-align: middle;
+
+            margin-right: 7px;
+        }
+
+        @keyframes spin {
+
+            to {
+                transform: rotate(360deg);
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <section class="hero">
+
+        <div class="hero-badge">
+            🌸 AI • ANIME • TRANSCRIPT STUDIO
+        </div>
+
+        <h1>
+            🌸 <span>AniScript</span> Pro
+        </h1>
+
+        <p>
+            YouTube Captions • AI Translation • Multi-Language • PDF Export
+        </p>
+
+    </section>
+
+    <section class="card">
+
+        <div class="section-title">
+            <div class="icon">🎬</div>
+            YouTube Video
+        </div>
+
+        <label>
+            🔗 Paste YouTube Video URL
+        </label>
+
+        <input
+            type="text"
+            id="youtubeUrl"
+            placeholder="https://www.youtube.com/watch?v=..."
+        >
+
+        <button
+            class="full-btn"
+            onclick="getLanguages()"
+        >
+            🌐 Find Available Languages
+        </button>
+
+        <div
+            id="status"
+            class="status"
+        ></div>
+
+    </section>
+
+    <section class="grid">
+
+        <div class="card">
+
+            <div class="section-title">
+
+                <div class="icon">📝</div>
+
+                Transcript Language
+
+            </div>
+
+            <label>
+                Select the language available on YouTube
+            </label>
+
+            <select id="transcriptLanguage">
+
+                <option value="">
+                    Select Transcript Language
+                </option>
+
+            </select>
+
+            <button
+                class="full-btn"
+                onclick="getTranscript()"
+            >
+                ✨ Get Transcript
+            </button>
+
+        </div>
+
+        <div class="card">
+
+            <div class="section-title">
+
+                <div class="icon">🌍</div>
+
+                Translate Transcript
+
+            </div>
+
+            <label>
+                Select target language
+            </label>
+
+            <select id="translationLanguage">
+
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
+                <option value="bn">Bengali</option>
+                <option value="te">Telugu</option>
+                <option value="mr">Marathi</option>
+                <option value="ta">Tamil</option>
+                <option value="gu">Gujarati</option>
+                <option value="kn">Kannada</option>
+                <option value="ml">Malayalam</option>
+                <option value="pa">Punjabi</option>
+                <option value="ur">Urdu</option>
+                <option value="or">Odia</option>
+                <option value="as">Assamese</option>
+
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="it">Italian</option>
+                <option value="pt">Portuguese</option>
+
+                <option value="ja">Japanese</option>
+                <option value="ko">Korean</option>
+                <option value="zh-CN">Chinese</option>
+                <option value="ar">Arabic</option>
+                <option value="ru">Russian</option>
+
+            </select>
+
+            <button
+                class="full-btn"
+                onclick="translateTranscript()"
+            >
+                🌐 Translate Transcript
+            </button>
+
+        </div>
+
+    </section>
+
+    <section class="grid">
+
+        <div class="card">
+
+            <div class="language-info">
+
+                <div class="section-title">
+                    <div class="icon">📄</div>
+                    Original Transcript
+                </div>
+
+                <span
+                    class="badge"
+                    id="originalLanguage"
+                >
+                    ORIGINAL
+                </span>
+
+            </div>
+
+            <textarea
+                id="originalTranscript"
+                placeholder="Your YouTube transcript will appear here..."
+            ></textarea>
+
+        </div>
+
+        <div class="card">
+
+            <div class="language-info">
+
+                <div class="section-title">
+                    <div class="icon">✨</div>
+                    Translated Transcript
+                </div>
+
+                <span
+                    class="badge"
+                    id="translatedLanguage"
+                >
+                    TRANSLATED
+                </span>
+
+            </div>
+
+            <textarea
+                id="translatedTranscript"
+                placeholder="Your translated transcript will appear here..."
+            ></textarea>
+
+        </div>
+
+    </section>
+
+    <section class="card export-card">
+
+        <div class="export-icon">
+            📥
+        </div>
+
+        <h2>
+            Export Your Transcript
+        </h2>
+
+        <p>
+            Save original and translated subtitles as a PDF file.
+        </p>
+
+        <button onclick="downloadPDF()">
+            📄 Download Transcript PDF
+        </button>
+
+    </section>
+
+    <footer>
+
+        Powered by
+        <strong>AniScript Pro</strong>
+        • YouTube Transcript Studio
+
+    </footer>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   GLOBAL SOURCE LANGUAGE
+===================================================== */
+
+window.currentSourceLanguage = "";
+
+
+/* =====================================================
+   GET AVAILABLE LANGUAGES
+===================================================== */
+
+async function getLanguages() {
+
+    const url =
+        document.getElementById("youtubeUrl").value.trim();
+
+    const select =
+        document.getElementById("transcriptLanguage");
+
+    if (!url) {
+
+        showStatus(
+            "⚠️ Please enter a YouTube URL."
+        );
+
+        return;
+    }
+
+    showStatus(
+        '<span class="loader"></span> Finding available transcript languages...'
+    );
+
+    select.innerHTML = `
+        <option value="">
+            Loading languages...
+        </option>
+    `;
+
+    try {
+
+        const response =
+            await fetch("/languages", {
+
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    url: url
+                })
+
+            });
+
+        const data =
+            await response.json();
+
+        if (!data.success) {
+
+            throw new Error(
+                data.message
+            );
+
+        }
+
+        select.innerHTML = `
+            <option value="">
+                Select Transcript Language
+            </option>
+        `;
+
+        if (
+            !data.languages ||
+            data.languages.length === 0
+        ) {
+
+            select.innerHTML = `
+                <option value="">
+                    No transcript available
+                </option>
+            `;
+
+            showStatus(
+                "❌ No transcript languages found."
+            );
+
+            return;
+        }
+
+        data.languages.forEach(
+            language => {
+
+                const option =
+                    document.createElement("option");
+
+                option.value =
+                    language.language_code;
+
+                let label =
+                    language.language;
+
+                if (language.is_generated) {
+
+                    label +=
+                        " — Auto-generated";
+
+                } else {
+
+                    label +=
+                        " — Manual";
+
+                }
+
+                option.textContent =
+                    label;
+
+                select.appendChild(
+                    option
+                );
+
+            }
+        );
+
+        showStatus(
+            `✅ ${data.languages.length} transcript language(s) found.`
+        );
+
+    } catch (error) {
+
+        select.innerHTML = `
+            <option value="">
+                Select Transcript Language
+            </option>
+        `;
+
+        showStatus(
+            "❌ " + error.message
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   GET TRANSCRIPT
+===================================================== */
+
+async function getTranscript() {
+
+    const url =
+        document.getElementById("youtubeUrl")
+            .value.trim();
+
+    const languageCode =
+        document.getElementById("transcriptLanguage")
+            .value;
+
+    if (!url) {
+
+        showStatus(
+            "⚠️ Please enter a YouTube URL."
+        );
+
+        return;
+    }
+
+    if (!languageCode) {
+
+        showStatus(
+            "⚠️ Please select transcript language."
+        );
+
+        return;
+    }
+
+    showStatus(
+        '<span class="loader"></span> Extracting transcript...'
+    );
+
+    try {
+
+        const response =
+            await fetch("/transcript", {
+
+                method: "POST",
+
+                headers: {
+                    "Content-Type":
+                        "application/json"
+                },
+
+                body: JSON.stringify({
+
+                    url: url,
+
+                    language_code:
+                        languageCode
+
+                })
+
+            });
+
+        const data =
+            await response.json();
+
+        if (!data.success) {
+
+            throw new Error(
+                data.message
+            );
+
+        }
+
+        document.getElementById(
+            "originalTranscript"
+        ).value = data.text;
+
+
+        document.getElementById(
+            "originalLanguage"
+        ).textContent =
+            data.language;
+
+
+        /*
+         VERY IMPORTANT
+
+         Save actual YouTube transcript language.
+         Example:
+         Hindi = hi
+         English = en
+         Bengali = bn
+        */
+
+        window.currentSourceLanguage =
+            data.language_code ||
+            languageCode;
+
+
+        document.getElementById(
+            "translatedTranscript"
+        ).value = "";
+
+
+        document.getElementById(
+            "translatedLanguage"
+        ).textContent =
+            "TRANSLATED";
+
+
+        showStatus(
+            `✅ ${data.language} transcript extracted successfully.`
+        );
+
+    } catch (error) {
+
+        showStatus(
+            "❌ " + error.message
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   TRANSLATE TRANSCRIPT
+===================================================== */
+
+async function translateTranscript() {
+
+    const text =
+        document.getElementById(
+            "originalTranscript"
+        ).value.trim();
+
+
+    const targetSelect =
+        document.getElementById(
+            "translationLanguage"
+        );
+
+
+    const targetLanguage =
+        targetSelect.value;
+
+
+    const targetName =
+        targetSelect.options[
+            targetSelect.selectedIndex
+        ].text;
+
+
+    /*
+      Actual source language
+    */
+
+    const sourceLanguage =
+        window.currentSourceLanguage || "";
+
+
+    if (!text) {
+
+        showStatus(
+            "⚠️ First get the original transcript."
+        );
+
+        return;
+    }
+
+
+    if (!sourceLanguage) {
+
+        showStatus(
+            "⚠️ Please get the transcript again before translating."
+        );
+
+        return;
+    }
+
+
+    if (!targetLanguage) {
+
+        showStatus(
+            "⚠️ Please select translation language."
+        );
+
+        return;
+    }
+
+
+    showStatus(
+        '<span class="loader"></span> Translating transcript...'
+    );
+
+
+    try {
+
+        const response =
+            await fetch("/translate", {
+
+                method: "POST",
+
+                headers: {
+                    "Content-Type":
+                        "application/json"
+                },
+
+                body: JSON.stringify({
+
+                    text: text,
+
+                    source_language:
+                        sourceLanguage,
+
+                    target_language:
+                        targetLanguage
+
+                })
+
+            });
+
+
+        const data =
+            await response.json();
+
+
+        if (!data.success) {
+
+            throw new Error(
+                data.message
+            );
+
+        }
+
+
+        document.getElementById(
+            "translatedTranscript"
+        ).value =
+            data.text;
+
+
+        document.getElementById(
+            "translatedLanguage"
+        ).textContent =
+            targetName;
+
+
+        showStatus(
+            `✅ ${targetName} translation completed successfully.`
+        );
+
+
+    } catch (error) {
+
+        showStatus(
+            "❌ " + error.message
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   DOWNLOAD PDF
+===================================================== */
+
+async function downloadPDF() {
+
+    const original =
+        document.getElementById(
+            "originalTranscript"
+        ).value.trim();
+
+
+    const translated =
+        document.getElementById(
+            "translatedTranscript"
+        ).value.trim();
+
+
+    const targetSelect =
+        document.getElementById(
+            "translationLanguage"
+        );
+
+
+    const targetLanguage =
+        targetSelect.value;
+
+
+    /*
+      Filename language mapping
+    */
+
+    const languageNames = {
+
+        "en": "English",
+        "hi": "Hindi",
+        "bn": "Bengali",
+        "te": "Telugu",
+        "mr": "Marathi",
+        "ta": "Tamil",
+        "gu": "Gujarati",
+        "kn": "Kannada",
+        "ml": "Malayalam",
+        "pa": "Punjabi",
+        "ur": "Urdu",
+        "or": "Odia",
+        "as": "Assamese",
+
+        "es": "Spanish",
+        "fr": "French",
+        "de": "German",
+        "it": "Italian",
+        "pt": "Portuguese",
+
+        "ja": "Japanese",
+        "ko": "Korean",
+        "zh-CN": "Chinese",
+        "ar": "Arabic",
+        "ru": "Russian"
+
+    };
+
+
+    if (!original && !translated) {
+
+        showStatus(
+            "⚠️ There is no transcript to export."
+        );
+
+        return;
+    }
+
+
+    if (!targetLanguage) {
+
+        showStatus(
+            "⚠️ Please select a translation language."
+        );
+
+        return;
+    }
+
+
+    const languageName =
+        languageNames[targetLanguage] ||
+        "Transcript";
+
+
+    showStatus(
+        '<span class="loader"></span> Creating PDF...'
+    );
+
+
+    try {
+
+        const response =
+            await fetch(
+                "/download-pdf",
+                {
+
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body: JSON.stringify({
+
+                        original_text:
+                            original,
+
+                        translated_text:
+                            translated,
+
+                        source_language:
+                            window.currentSourceLanguage || "",
+
+                        target_language:
+                            targetLanguage
+
+                    })
+
+                }
+            );
+
+
+        if (!response.ok) {
+
+            const data =
+                await response.json().catch(
+                    () => ({})
+                );
+
+            throw new Error(
+                data.message ||
+                "PDF generation failed."
+            );
+
+        }
+
+
+        const blob =
+            await response.blob();
+
+
+        const downloadUrl =
+            window.URL.createObjectURL(
+                blob
+            );
+
+
+        const a =
+            document.createElement("a");
+
+
+        a.href =
+            downloadUrl;
+
+
+        /*
+          Selected language filename
+
+          Bengali -> AniScript_Bengali.pdf
+          Tamil   -> AniScript_Tamil.pdf
+          Hindi   -> AniScript_Hindi.pdf
+          English -> AniScript_English.pdf
+        */
+
+        a.download =
+            `AniScript_${languageName}.pdf`;
+
+
+        document.body.appendChild(a);
+
+
+        a.click();
+
+
+        a.remove();
+
+
+        window.URL.revokeObjectURL(
+            downloadUrl
+        );
+
+
+        showStatus(
+            `✅ AniScript_${languageName}.pdf downloaded successfully.`
+        );
+
+
+    } catch (error) {
+
+        showStatus(
+            "❌ " + error.message
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+function showStatus(message) {
+
+    const status =
+        document.getElementById(
+            "status"
+        );
+
+
+    status.innerHTML =
+        message;
+
+
+    status.classList.add(
+        "show"
+    );
+
+}
+
+</script>
+
+</body>
+</html>
