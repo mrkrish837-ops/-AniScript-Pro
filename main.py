@@ -1,5 +1,12 @@
+
+D:\pihu option\YouTube_Transcript_Pro\YouTube_Transcript_Pro>type main.py
 from flask import Flask, render_template, request, jsonify, send_file
 from youtube_transcript_api import YouTubeTranscriptApi
+try:
+    from youtube_transcript_api.proxies import WebshareProxyConfig, GenericProxyConfig
+except ImportError:
+    WebshareProxyConfig = None
+    GenericProxyConfig = None
 
 from reportlab.lib.pagesizes import A4
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
@@ -22,6 +29,62 @@ import unicodedata
 # =========================================================
 
 app = Flask(__name__)
+
+# =========================================================
+# YOUTUBE TRANSCRIPT API / RENDER PROXY
+# =========================================================
+# Render/cloud IPs can be blocked by YouTube. When proxy
+# credentials are configured in Render Environment Variables,
+# all youtube-transcript-api requests use the proxy.
+#
+# Required Render variables for Webshare:
+#   WEBSHARE_PROXY_USERNAME
+#   WEBSHARE_PROXY_PASSWORD
+#
+# Optional generic proxy variables:
+#   YOUTUBE_HTTP_PROXY
+#   YOUTUBE_HTTPS_PROXY
+
+def create_youtube_api():
+    webshare_user = os.environ.get("WEBSHARE_PROXY_USERNAME", "").strip()
+    webshare_pass = os.environ.get("WEBSHARE_PROXY_PASSWORD", "").strip()
+
+    http_proxy = os.environ.get("YOUTUBE_HTTP_PROXY", "").strip()
+    https_proxy = os.environ.get("YOUTUBE_HTTPS_PROXY", "").strip()
+
+    if webshare_user and webshare_pass:
+        if WebshareProxyConfig is None:
+            raise RuntimeError(
+                "Proxy support is unavailable. Upgrade youtube-transcript-api "
+                "to a recent version in requirements.txt."
+            )
+
+        print("YouTube API: Webshare residential proxy ENABLED")
+        return YouTubeTranscriptApi(
+            proxy_config=WebshareProxyConfig(
+                proxy_username=webshare_user,
+                proxy_password=webshare_pass,
+            )
+        )
+
+    if http_proxy or https_proxy:
+        if GenericProxyConfig is None:
+            raise RuntimeError(
+                "Generic proxy support is unavailable. Upgrade "
+                "youtube-transcript-api to a recent version."
+            )
+
+        print("YouTube API: generic proxy ENABLED")
+        return YouTubeTranscriptApi(
+            proxy_config=GenericProxyConfig(
+                http_url=http_proxy or None,
+                https_url=https_proxy or None,
+            )
+        )
+
+    print("YouTube API: NO PROXY configured")
+    return YouTubeTranscriptApi()
+
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -510,7 +573,7 @@ def get_video_id(url):
 
 def get_available_tracks(video_id):
 
-    api = YouTubeTranscriptApi()
+    api = create_youtube_api()
 
     transcript_list = api.list(
         video_id
@@ -548,7 +611,7 @@ def fetch_transcript(
     language_code
 ):
 
-    api = YouTubeTranscriptApi()
+    api = create_youtube_api()
 
     transcript_list = api.list(
         video_id
@@ -1586,3 +1649,4 @@ if __name__ == "__main__":
         use_reloader=False
 
     )
+D:\pihu option\YouTube_Transcript_Pro\YouTube_Transcript_Pro>
