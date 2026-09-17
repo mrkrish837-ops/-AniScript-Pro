@@ -27,3 +27,9 @@ urllib3==2.8.0
 Werkzeug==3.1.8
 waitress
 youtube-transcript-api==1.2.4
+gunicorn
+
+Flask
+youtube-transcript-api
+reportlab
+gunicorn
