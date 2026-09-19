@@ -1,5 +1,5 @@
+dist/
+build/
 venv/
-.venv/
 __pycache__/
-*.pyc
-.env
+output.mkdir/
