@@ -2,4 +2,4 @@ dist/
 build/
 venv/
 __pycache__/
-output.mkdir/
+output.mkdir/.env
