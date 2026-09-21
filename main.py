@@ -33,62 +33,164 @@ api_key = os.getenv("YOUTUBE_API_KEY")
 # =========================================================
 
 app = Flask(__name__)
-
 # =========================================================
 # YOUTUBE TRANSCRIPT API / RENDER PROXY
 # =========================================================
-# Render/cloud IPs can be blocked by YouTube. When proxy
-# credentials are configured in Render Environment Variables,
-# all youtube-transcript-api requests use the proxy.
-#
-# Required Render variables for Webshare:
-#   WEBSHARE_PROXY_USERNAME
-#   WEBSHARE_PROXY_PASSWORD
-#
-# Optional generic proxy variables:
-#   YOUTUBE_HTTP_PROXY
-#   YOUTUBE_HTTPS_PROXY
+
+from urllib.parse import quote
+
 
 def create_youtube_api():
-    webshare_user = os.environ.get("WEBSHARE_PROXY_USERNAME", "").strip()
-    webshare_pass = os.environ.get("WEBSHARE_PROXY_PASSWORD", "").strip()
+    """
+    Create YouTubeTranscriptApi safely.
 
-    http_proxy = os.environ.get("YOUTUBE_HTTP_PROXY", "").strip()
-    https_proxy = os.environ.get("YOUTUBE_HTTPS_PROXY", "").strip()
+    Priority:
+    1. Webshare username/password
+    2. Full generic HTTP/HTTPS proxy URLs
+    3. Direct connection
+    """
+
+    webshare_user = os.environ.get(
+        "WEBSHARE_PROXY_USERNAME", ""
+    ).strip()
+
+    webshare_pass = os.environ.get(
+        "WEBSHARE_PROXY_PASSWORD", ""
+    ).strip()
+
+    http_proxy = os.environ.get(
+        "YOUTUBE_HTTP_PROXY", ""
+    ).strip()
+
+    https_proxy = os.environ.get(
+        "YOUTUBE_HTTPS_PROXY", ""
+    ).strip()
+
+    # -----------------------------------------------------
+    # 1. WEBSHARE
+    # -----------------------------------------------------
 
     if webshare_user and webshare_pass:
-        if WebshareProxyConfig is None:
-            raise RuntimeError(
-                "Proxy support is unavailable. Upgrade youtube-transcript-api "
-                "to a recent version in requirements.txt."
+
+        try:
+            from youtube_transcript_api.proxies import (
+                WebshareProxyConfig
             )
 
-        print("YouTube API: Webshare residential proxy ENABLED")
-        return YouTubeTranscriptApi(
-            proxy_config=WebshareProxyConfig(
-                proxy_username=webshare_user,
-                proxy_password=webshare_pass,
+            print(
+                "YouTube API: Webshare proxy ENABLED"
             )
-        )
+
+            return YouTubeTranscriptApi(
+                proxy_config=WebshareProxyConfig(
+                    proxy_username=webshare_user,
+                    proxy_password=webshare_pass
+                )
+            )
+
+        except Exception as e:
+
+            print(
+                "Webshare proxy initialization failed:"
+            )
+
+            print(
+                repr(e)
+            )
+
+            raise RuntimeError(
+                "Webshare proxy configuration failed. "
+                "Check WEBSHARE_PROXY_USERNAME and "
+                "WEBSHARE_PROXY_PASSWORD in Render."
+            )
+
+    # -----------------------------------------------------
+    # 2. GENERIC PROXY
+    # -----------------------------------------------------
 
     if http_proxy or https_proxy:
-        if GenericProxyConfig is None:
+
+        try:
+            from youtube_transcript_api.proxies import (
+                GenericProxyConfig
+            )
+
+            # ---------------------------------------------
+            # IMPORTANT:
+            # Proxy MUST contain http:// or https://
+            # ---------------------------------------------
+
+            def normalize_proxy(proxy):
+
+                if not proxy:
+                    return None
+
+                proxy = proxy.strip()
+
+                if not (
+                    proxy.startswith("http://")
+                    or proxy.startswith("https://")
+                    or proxy.startswith("socks5://")
+                    or proxy.startswith("socks5h://")
+                ):
+                    proxy = "http://" + proxy
+
+                return proxy
+
+            http_proxy = normalize_proxy(
+                http_proxy
+            )
+
+            https_proxy = normalize_proxy(
+                https_proxy
+            )
+
+            print(
+                "YouTube API: Generic proxy ENABLED"
+            )
+
+            print(
+                "HTTP proxy:",
+                http_proxy
+            )
+
+            print(
+                "HTTPS proxy:",
+                https_proxy
+            )
+
+            return YouTubeTranscriptApi(
+                proxy_config=GenericProxyConfig(
+                    http_url=http_proxy,
+                    https_url=https_proxy
+                )
+            )
+
+        except Exception as e:
+
+            print(
+                "Generic proxy initialization failed:"
+            )
+
+            print(
+                repr(e)
+            )
+
             raise RuntimeError(
-                "Generic proxy support is unavailable. Upgrade "
-                "youtube-transcript-api to a recent version."
+                "Generic proxy configuration failed. "
+                "Use a complete proxy URL such as "
+                "http://username:password@host:port"
             )
 
-        print("YouTube API: generic proxy ENABLED")
-        return YouTubeTranscriptApi(
-            proxy_config=GenericProxyConfig(
-                http_url=http_proxy or None,
-                https_url=https_proxy or None,
-            )
-        )
+    # -----------------------------------------------------
+    # 3. DIRECT CONNECTION
+    # -----------------------------------------------------
 
-    print("YouTube API: NO PROXY configured")
+    print(
+        "YouTube API: NO PROXY configured"
+    )
+
     return YouTubeTranscriptApi()
-
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
